@@ -1038,6 +1038,47 @@ transform:rotate(90deg) scale(1.1);
 }
 
 
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:40px;
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+    padding:100px 0;
+
+}
+.stat{
+
+    padding:30px;
+
+}
+
+.stat h2{
+
+    font-size:3rem;
+
+    color:#ff5a1f;
+
+    margin-bottom:10px;
+
+}
+
+.stat p{
+
+    color:#aaa;
+
+    font-size:1.05rem;
+
+}
+
 @keyframes popup{
 
 from{

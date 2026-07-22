@@ -8,13 +8,21 @@ document.querySelector("#app").innerHTML = `
 
     <div class="logo">SA</div>
 
+    <div class="hamburger">
+
+        ☰
+
+    </div>
+
     <div class="nav-links">
+
         <a href="#">Home</a>
         <a href="#showreel">Showreel</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+
     </div>
 
 </nav>
@@ -465,3 +473,28 @@ modal.style.display="none";
 }
 
 };
+
+const heroVideo = document.querySelector(".hero-video");
+
+heroVideo.addEventListener("loadeddata", () => {
+    heroVideo.classList.add("loaded");
+});
+
+const hamburger = document.querySelector(".hamburger");
+
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+});
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+
+    });
+
+});

@@ -1173,6 +1173,7 @@ transition:1s;
 opacity:0;
 
 visibility:hidden;
+pointer-events:none;
 
 }
 

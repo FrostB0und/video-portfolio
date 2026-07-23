@@ -51,7 +51,7 @@ document.querySelector("#app").innerHTML = `
 
 <section class="hero">
 
-    <video class="hero-video" autoplay muted loop playsinline>
+    <video class="hero-video" autoplay muted loop playsinline fetchpriority="high">
         <source src="videos/background.mp4" type="video/mp4">
     </video>
 
@@ -521,28 +521,23 @@ document.querySelectorAll(".nav-links a").forEach(link=>{
 });
 
 const loader = document.getElementById("loader");
-const loadingText = document.getElementById("loadingText");
 const heroVideo = document.querySelector(".hero-video");
 
-setTimeout(() => {
-    loadingText.textContent = "Preparing Portfolio...";
-}, 1200);
+let loaderHidden = false;
 
-heroVideo.addEventListener("canplay", () => {
+function hideLoader() {
 
-    heroVideo.classList.add("loaded");
+    if (loaderHidden) return;
 
-    setTimeout(() => {
-
-        loader.classList.add("hide");
-
-    }, 400);
-
-});
-
-setTimeout(() => {
+    loaderHidden = true;
 
     heroVideo.classList.add("loaded");
+
     loader.classList.add("hide");
 
-}, 5000);
+}
+
+heroVideo.addEventListener("canplaythrough", hideLoader);
+
+// Safety fallback
+setTimeout(hideLoader, 15000);

@@ -3,7 +3,29 @@
 import "./style.css";
 
 document.querySelector("#app").innerHTML = `
+<div id="loader">
 
+    <div class="loader-logo">
+
+        SA
+
+    </div>
+
+    <div class="loader-line"></div>
+
+    <h2>
+
+        SENODH ANAVARATNE
+
+    </h2>
+
+    <p>
+
+        AUTOMOTIVE FILMMAKER
+
+    </p>
+
+</div>
 <nav>
 
     <div class="logo">SA</div>
@@ -75,13 +97,12 @@ document.querySelector("#app").innerHTML = `
         A collection of my best automotive work.
     </p>
 
-    <div class="showreel-wrapper"
+    
+<div class="showreel-wrapper"
      onclick="openVideo('/videos/showreel.mp4')">
 
-    <img
-        src="images/showreel.png"
-        alt="Showreel"
-    >
+    <img src="images/showreel.webp"loading="lazy"
+decoding="async" alt="Showreel">
 
     <div class="showreel-overlay">
 
@@ -113,7 +134,8 @@ document.querySelector("#app").innerHTML = `
         <div class="portfolio-card"
      onclick="openVideo('/videos/havelock.mp4')">
 
-            <img src="images/havelock.png" alt="Havelock Mall">
+            <img src="images/havelock.webp"loading="lazy"
+decoding="async" alt="Havelock Mall">
 
             <div class="portfolio-overlay">
 
@@ -136,7 +158,8 @@ document.querySelector("#app").innerHTML = `
         <div class="portfolio-card"
      onclick="openVideo('/videos/Port_City.mp4')">
 
-            <img src="images/Port_City.png" alt="Port">
+            <img src="images/Port_City.webp"loading="lazy"
+decoding="async" alt="Port">
 
             <div class="portfolio-overlay">
 
@@ -159,7 +182,8 @@ document.querySelector("#app").innerHTML = `
         <div class="portfolio-card"
      onclick="openVideo('/videos/BMW.mp4')">
 
-            <img src="images/BMW.png" alt="BMW">
+            <img src="images/BMW.webp"loading="lazy"
+decoding="async" alt="BMW">
 
             <div class="portfolio-overlay">
 
@@ -182,7 +206,8 @@ document.querySelector("#app").innerHTML = `
         <div class="portfolio-card"
      onclick="openVideo('/videos/Arcade.mp4')">
 
-            <img src="images/Arcade.png" alt="Arcade">
+            <img src="images/Arcade.webp" loading="lazy"
+decoding="async" alt="Arcade">
 
             <div class="portfolio-overlay">
 
@@ -496,5 +521,21 @@ document.querySelectorAll(".nav-links a").forEach(link=>{
         navLinks.classList.remove("active");
 
     });
+
+});
+
+window.addEventListener("load",()=>{
+
+const hero=document.querySelector(".hero-video");
+
+hero.style.transition="opacity 1.5s";
+
+setTimeout(()=>{
+
+document
+.getElementById("loader")
+.classList.add("hide");
+
+},2200);
 
 });

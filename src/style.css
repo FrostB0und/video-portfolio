@@ -1239,6 +1239,21 @@ animation:fadeText .8s forwards;
 animation-delay:1.4s;
 
 }
+#loadingText{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:#ff5a1f;
+
+    letter-spacing:3px;
+
+    font-size:.9rem;
+
+    transition:.4s;
+
+}
 
 @keyframes growLine{
 

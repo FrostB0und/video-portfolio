@@ -19,11 +19,11 @@ document.querySelector("#app").innerHTML = `
 
     </h2>
 
-    <p>
+    <p id="loadingText">
 
-        AUTOMOTIVE FILMMAKER
+    Preparing Experience...
 
-    </p>
+</p>
 
 </div>
 <nav>
@@ -499,11 +499,7 @@ modal.style.display="none";
 
 };
 
-const heroVideo = document.querySelector(".hero-video");
 
-heroVideo.addEventListener("loadeddata", () => {
-    heroVideo.classList.add("loaded");
-});
 
 const hamburger = document.querySelector(".hamburger");
 
@@ -524,18 +520,29 @@ document.querySelectorAll(".nav-links a").forEach(link=>{
 
 });
 
-window.addEventListener("load",()=>{
+const loader = document.getElementById("loader");
+const loadingText = document.getElementById("loadingText");
+const heroVideo = document.querySelector(".hero-video");
 
-const hero=document.querySelector(".hero-video");
+setTimeout(() => {
+    loadingText.textContent = "Preparing Portfolio...";
+}, 1200);
 
-hero.style.transition="opacity 1.5s";
+heroVideo.addEventListener("canplay", () => {
 
-setTimeout(()=>{
+    heroVideo.classList.add("loaded");
 
-document
-.getElementById("loader")
-.classList.add("hide");
+    setTimeout(() => {
 
-},2200);
+        loader.classList.add("hide");
+
+    }, 400);
 
 });
+
+setTimeout(() => {
+
+    heroVideo.classList.add("loaded");
+    loader.classList.add("hide");
+
+}, 5000);

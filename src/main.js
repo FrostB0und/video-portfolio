@@ -139,7 +139,7 @@ decoding="async" alt="Havelock Mall">
 
             <div class="portfolio-overlay">
 
-                <span class="project-tag">Car Meet</span>
+                <span class="project-tag">Car Show</span>
 
                 <h3>Havelock Mall</h3>
 
@@ -251,9 +251,9 @@ decoding="async" alt="Arcade">
 
     <div class="stat">
 
-        <h2>Experienced</h2>
+        <h2>60FPS</h2>
 
-        <p>Editing</p>
+        <p>Capture</p>
 
     </div>
 
